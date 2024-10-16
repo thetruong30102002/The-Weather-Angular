@@ -8,7 +8,7 @@ import { WeatherService } from '../service/weather/weather.service';
 })
 export class WeatherComponent implements OnInit {
   weatherData: any;
-  cities: string[] = ['Hà Nội', 'Thành Phố Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'];
+  cities: string[] = ['Hà Nội', 'Thành Phố Hồ Chí Minh','Nha Trang'];
   selectedCity: string = this.cities[0];
 
   constructor(private weatherService: WeatherService) {}
