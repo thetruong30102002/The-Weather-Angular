@@ -1,0 +1,22 @@
+<div class="">
+<div class="weather-container bg-white p-6 rounded-lg shadow-md max-w-md mx-auto mt-8 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');">
+  <div class="bg-white bg-opacity-80 p-6 rounded-lg"> <!-- Thêm lớp bg-opacity để làm nền bên dưới -->
+    <h2 class="text-3xl font-bold mb-4 text-center text-gray-800">Dự báo thời tiết</h2>
+    
+    <div class="mb-4">
+      <label for="citySelect" class="block text-lg font-medium text-gray-700">Chọn thành phố:</label>
+      <select id="citySelect" [(ngModel)]="selectedCity" (change)="onCityChange(selectedCity)" class="mt-2 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500">
+        <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="weatherData" class="mt-6 p-4 border border-gray-200 rounded-md bg-gray-50">
+      <h3 class="text-2xl font-semibold text-gray-800">{{ weatherData.name }}</h3>
+      <p class="text-lg text-gray-600">{{ weatherData.weather[0].description | titlecase }}</p>
+      <p class="text-4xl font-bold text-blue-600">{{ weatherData.main.temp }}°C</p>
+      <p class="text-gray-700">Độ ẩm: <span class="font-medium">{{ weatherData.main.humidity }}%</span></p>
+      <p class="text-gray-700">Tốc độ gió: <span class="font-medium">{{ weatherData.wind.speed }} m/s</span></p>
+    </div>
+  </div>
+</div>
+</div>
